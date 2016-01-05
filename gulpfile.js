@@ -37,6 +37,7 @@ var config = {
 gulp.task('templates', function() {
   gulp.src(config.srcDir + '*.jade')
     .pipe(jade())
+    .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(config.distDir));
 });
 
@@ -77,7 +78,7 @@ gulp.task('cssmin', function() {
     .pipe(gulp.dest(config.cssDir));
 });
 
-gulp.task('cssbeauty', ['sassdist'], function() {
+gulp.task('cssbeauty', ['sass:dist'], function() {
   return gulp.src(config.cssDir + '/*.css')
     .pipe(csscomb())
     .pipe(gulp.dest(config.cssDir));
@@ -128,7 +129,7 @@ gulp.task('sass:dev', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('sassdist', ['clean'],  function () {
+gulp.task('sass:dist', ['clean'],  function () {
   return gulp.src(config.scssDir + '**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({
@@ -139,4 +140,4 @@ gulp.task('sassdist', ['clean'],  function () {
 });
 
 gulp.task('default', ['serve']);
-gulp.task('dist', ['cssbeauty', 'pretty', 'scripts']);
+gulp.task('dist', ['cssbeauty', 'templates', 'scripts']);
