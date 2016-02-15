@@ -60,3 +60,10 @@ $media-expressions: (
     display: table-cell;
   }
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @extend %clearfix;
+}

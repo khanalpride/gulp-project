@@ -1,7 +1,3 @@
 jQuery(document).ready(function(){
-  initHelloWorld();
+  initSameheight();
 });
-
-function initHelloWorld() {
-  console.log('Hello World');
-}

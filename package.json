@@ -20,10 +20,10 @@
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
+    "gulp-newer": "^1.1.0",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
-    "imagemin-pngquant": "^4.2.0",
-    "sprity": "^1.0.8"
+    "imagemin-pngquant": "^4.2.0"
   },
   "keywords": [
     "gulp",
